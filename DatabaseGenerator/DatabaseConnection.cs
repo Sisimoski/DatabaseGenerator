@@ -42,7 +42,7 @@ namespace DatabaseGenerator
             try
             {
                 connection.Open();
-                Console.WriteLine($"Połączono z bazą danych. Witaj {userID}!");
+                Console.WriteLine($"Połączono z bazą danych. Witaj {userID}!\n");
             }
             catch (Exception ex)
             {

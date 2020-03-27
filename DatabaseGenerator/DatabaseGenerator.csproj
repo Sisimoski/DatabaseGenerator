@@ -8,4 +8,10 @@
   <ItemGroup>
     <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.19.60" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ODPdotNETExample.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ODPdotNETExample.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+  </ItemGroup>
 </Project>
