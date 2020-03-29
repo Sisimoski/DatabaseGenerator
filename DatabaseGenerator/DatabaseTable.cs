@@ -4,8 +4,10 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace DatabaseGenerator
 {
-    public class DatabaseTable : DatabaseHandler
+    public class DatabaseTable
     {
+        int index = 0;
+
         public DatabaseTable()
         {
         }
@@ -29,12 +31,12 @@ namespace DatabaseGenerator
 
                 reader.Dispose();
 
-                Console.WriteLine("Lista tabel: ");
-                foreach(string item in TableList)
+                Console.WriteLine("Dostępne tabele: ");
+                foreach (string item in TableList)
                 {
-                    Console.WriteLine(item);
+                    index++;
+                    Console.WriteLine($"#{index}: {item}");
                 }
-
             }
             catch (Exception ex)
             {

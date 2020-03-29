@@ -10,14 +10,12 @@ namespace DatabaseGenerator
             Console.WriteLine("Symulator SQL");
             Console.WriteLine("=============");
 
-            Console.WriteLine("Co chcesz zrobić?");
-
             var myConnection = new DatabaseConnection();
             var myTable = new DatabaseTable();
-            var myGenerator = new Generate();
+            var myGenerator = new Generator();
             myConnection.ConnectToDatabase(true);
             myTable.SelectTables();
-            myGenerator.Fill();
+            myGenerator.Generate();
         }
     }
 }

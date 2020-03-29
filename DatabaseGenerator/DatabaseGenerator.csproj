@@ -10,8 +10,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="ODPdotNETExample.cs" />
+    <Compile Remove="Program2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ODPdotNETExample.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <None Include="Program2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="Generator\" />
   </ItemGroup>
 </Project>
