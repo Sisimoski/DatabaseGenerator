@@ -1,5 +1,4 @@
 ﻿using System;
-using Oracle.ManagedDataAccess.Client;
 
 namespace DatabaseGenerator
 {

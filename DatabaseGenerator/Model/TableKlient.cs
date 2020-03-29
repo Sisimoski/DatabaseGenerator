@@ -1,6 +1,4 @@
-﻿using System;
-using System.Text;
-using Oracle.ManagedDataAccess.Client;
+﻿using System.Text;
 
 namespace DatabaseGenerator.Model
 {
