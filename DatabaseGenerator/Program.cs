@@ -10,11 +10,14 @@ namespace DatabaseGenerator
             Console.WriteLine("=============");
 
             var myConnection = new DatabaseConnection();
-            var myTable = new DatabaseTable();
-            var myGenerator = new Generator();
             myConnection.ConnectToDatabase(true);
+            var myTable = new DatabaseTable();
             myTable.SelectTables();
-            myGenerator.Generate();
+
+
+
+            //var myGenerator = new Generator();
+            //myGenerator.Generate();
         }
     }
 }

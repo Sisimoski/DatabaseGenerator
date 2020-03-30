@@ -6,8 +6,6 @@ namespace DatabaseGenerator
 {
     public class DatabaseTable
     {
-        int index = 0;
-
         public DatabaseTable()
         {
         }
@@ -16,6 +14,7 @@ namespace DatabaseGenerator
 
         public void SelectTables()
         {
+            int index = 0;
             using OracleCommand cmd = DatabaseConnection.connection.CreateCommand();
             try
             {
@@ -35,7 +34,7 @@ namespace DatabaseGenerator
                 foreach (string item in TableList)
                 {
                     index++;
-                    Console.WriteLine($"#{index}: {item}");
+                    Console.WriteLine($"\t#{index}: {item}");
                 }
             }
             catch (Exception ex)
