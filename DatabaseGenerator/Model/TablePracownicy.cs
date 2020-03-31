@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Text;
+using Oracle.ManagedDataAccess.Client;
 
 namespace DatabaseGenerator.Model
 {
     public class TablePracownicy
     {
-        public TablePracownicy()
-        {
-        }
-
         public static string[] pracownicyImieValues = { "Adam", "Adrian", "Aleksander", "Andrzej", "Bartosz", "Damian", "Daniel", "Dawid", "Grzegorz", "Hubert", "Ignacy", "Jacek", "Jakub", "Janusz", "Kacper", "Kamil", "Kewin", "Krystian", "Krzysztof", "Kuba", "Łukasz", "Maciej", "Marcin", "Marek", "Mariusz", "Michał", "Mieszko", "Olaf", "Oskar", "Patryk", "Paweł", "Robert", "Radosław" };
 
         public static string[] pracownicyNazwiskoValues = { "Adamowicz", "Głód", "Jarzębski", "Jaruga", "Piwowar", "Kardas", "Stach", "Naruszewicz", "Kaim", "Gonciarz", "Sokół", "Grabski", "Mączyński", "Spałek", "Lipski", "Wyrzykowski", "Wydra", "Waliczek", "Banaszewski", "Rykaczewski", "Gomułka", "Żelazowski", "Magciarz", "Pawłowicz", "Wach", "Widomski", "Koc", "Nowok", "Wielgus", "Leszko", "Fil", "Buras", "Iwiński", "Szukała", "Popko", "Landowski", "Stepaniuk", "Pastuszak", "Pabich", "Katarzyński", "Zachariasz", "Gruszewski", "Krakuski", "Dulęba", "Kobylański", "Karczmarczyk", "Smolak", "Tylek", "Kaproń" };

@@ -1,12 +1,10 @@
 ﻿using System;
+using Oracle.ManagedDataAccess.Client;
+
 namespace DatabaseGenerator.Model
 {
     public class TablePlatnosc
     {
-        public TablePlatnosc()
-        {
-        }
-
         public static string[] typplatnosciValues = { "Gotówka", "Karta Kredytowa", "Przelew" };
 
         public static string RandomDate = DateTime.Now.AddDays(Generator.random.Next(1, 100)).ToString("yyyyMMdd");

@@ -7,24 +7,8 @@ namespace DatabaseGenerator.Model
 {
     public class TableSamochod
     {
-        public TableSamochod()
-        {
-            string command = $"SELECT vin FROM samochod";
-            OracleCommand cmd = new OracleCommand(command, DatabaseConnection.connection);
-            OracleDataReader reader = cmd.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    TableSamochod.ListOfVINs.Add(reader.GetString(0));
-                }
-                reader.Dispose();
-            }
-        }
-
         public static List<string> ListOfVINs = new List<string>();
-        public static string[] VINs = ListOfVINs.ToArray();
+        public static string[] VINs = { };
 
         public static string RandomizeVIN()
         {

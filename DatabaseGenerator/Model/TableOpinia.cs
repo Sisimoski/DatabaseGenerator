@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using Oracle.ManagedDataAccess.Client;
 
 namespace DatabaseGenerator.Model
 {
@@ -12,5 +13,7 @@ namespace DatabaseGenerator.Model
             int rate = Generator.random.Next(1, 7);
             return rate;
         }
+
+        
     }
 }

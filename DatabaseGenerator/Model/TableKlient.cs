@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
+using Oracle.ManagedDataAccess.Client;
 
 namespace DatabaseGenerator.Model
 {
@@ -10,12 +12,11 @@ namespace DatabaseGenerator.Model
 
         public static string[] klientNazwiskoValues = { "Adamowicz", "Głód", "Jarzębski", "Jaruga", "Piwowar", "Kardas", "Stach", "Naruszewicz", "Kaim", "Gonciarz", "Sokół", "Grabski", "Mączyński", "Spałek", "Lipski", "Wyrzykowski", "Wydra", "Waliczek", "Banaszewski", "Rykaczewski", "Gomułka", "Żelazowski", "Magciarz", "Pawłowicz", "Wach", "Widomski", "Koc", "Nowok", "Wielgus", "Leszko", "Fil", "Buras", "Iwiński", "Szukała", "Popko", "Landowski", "Stepaniuk", "Pastuszak", "Pabich", "Katarzyński", "Zachariasz", "Gruszewski", "Krakuski", "Dulęba", "Kobylański", "Karczmarczyk", "Smolak", "Tylek", "Kaproń" };
 
-        public static string[] oddzialUlicaValues = {"ul. Rycerska", "ul. Jaworowa", "ul. Nowa", "ul. Energetyków", "ul. Liliowa", "ul. Złota", "ul. Piłsudzkiego", "ul. Pogodna", "ul. Żwirowa", "ul. Puławska", "ul. Chrzowska", "ul. Kołobrzeska", "ul. Ciasna", "ul. Zachodnia", "ul. Wschodnia", "ul. Północna", "ul. Południowa", "ul. Wesoła", "ul. Główna", "ul. Rolnicza", "ul. Gliwicka", "ul. Portowa", "ul. Żołnierska" };
+        public static string[] oddzialUlicaValues = { "ul. Rycerska", "ul. Jaworowa", "ul. Nowa", "ul. Energetyków", "ul. Liliowa", "ul. Złota", "ul. Piłsudzkiego", "ul. Pogodna", "ul. Żwirowa", "ul. Puławska", "ul. Chrzowska", "ul. Kołobrzeska", "ul. Ciasna", "ul. Zachodnia", "ul. Wschodnia", "ul. Północna", "ul. Południowa", "ul. Wesoła", "ul. Główna", "ul. Rolnicza", "ul. Gliwicka", "ul. Portowa", "ul. Żołnierska" };
 
-        public static string[] oddzialMiastoValues = {"Warszawa", "Kraków", "Łódź", "Wrocław", "Poznań", "Gdańsk", "Szczecin", "Bydgoszcz", "Lublin", "Białystok", "Katowice", "Gdynia", "Częstochowa", "Radom", "Sosnowiec", "Toruń", "Kielce", "Rzeszów", "Gliwice", "Zabrze", "Olsztyn", "Bielsko-Biała", "Bytom", "Zielona Góra", "Rybnik", "Opole" };
+        public static string[] oddzialMiastoValues = { "Warszawa", "Kraków", "Łódź", "Wrocław", "Poznań", "Gdańsk", "Szczecin", "Bydgoszcz", "Lublin", "Białystok", "Katowice", "Gdynia", "Częstochowa", "Radom", "Sosnowiec", "Toruń", "Kielce", "Rzeszów", "Gliwice", "Zabrze", "Olsztyn", "Bielsko-Biała", "Bytom", "Zielona Góra", "Rybnik", "Opole" };
 
-        public static string[] oddzialWojewodztwoValues = {"woj. dolnośląskie", "wol. kujawsko-pomorskie", "woj. lubelskie", "woj. lubuskie", "woj. łódzkie", "woj. małopolskie", "woj. mazowieckie", "woj. opolskie", "woj. podkarpackie", "woj. podlaskie", "woj. pomorskie", "woj. śląskie", "woj. świętokrzyskie", "woj. warmińsko-mazurskie", "woj. wielkopolskie", "woj. zachodniopomorskie" };
-
+        public static string[] oddzialWojewodztwoValues = { "woj. dolnośląskie", "wol. kujawsko-pomorskie", "woj. lubelskie", "woj. lubuskie", "woj. łódzkie", "woj. małopolskie", "woj. mazowieckie", "woj. opolskie", "woj. podkarpackie", "woj. podlaskie", "woj. pomorskie", "woj. śląskie", "woj. świętokrzyskie", "woj. warmińsko-mazurskie", "woj. wielkopolskie", "woj. zachodniopomorskie" };
 
         public static string RandomizeEmailValue()
         {
@@ -40,7 +41,7 @@ namespace DatabaseGenerator.Model
             const string chars = "0123456789";
             var lengthOfPhoneNumber = 9;
 
-            for (int i=0; i < lengthOfPhoneNumber; i++)
+            for (int i = 0; i < lengthOfPhoneNumber; i++)
             {
                 phoneNumberBuilder.Append(chars[Generator.random.Next(chars.Length)]);
             }
@@ -102,6 +103,5 @@ namespace DatabaseGenerator.Model
             }
             return creditCardNumberBuilder.ToString();
         }
-
     }
 }

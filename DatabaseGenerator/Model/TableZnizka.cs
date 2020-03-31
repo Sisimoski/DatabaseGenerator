@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using Oracle.ManagedDataAccess.Client;
 
 namespace DatabaseGenerator.Model
 {
@@ -9,7 +10,7 @@ namespace DatabaseGenerator.Model
         {
         }
 
-        public static string[] Opis = { "Promocja", "Żniżka", "Kupon rabatowy", "Brak żniżki"};
+        public static string[] Opis = { "Promocja", "Żniżka", "Kupon rabatowy", "Brak żniżki" };
 
         public static string RandomizeKodZnizkowy()
         {

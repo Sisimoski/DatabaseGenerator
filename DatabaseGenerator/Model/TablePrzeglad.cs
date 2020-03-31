@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Text;
+using Oracle.ManagedDataAccess.Client;
 
 namespace DatabaseGenerator.Model
 {
     public class TablePrzeglad
     {
-        public TablePrzeglad()
-        {
-        }
-
         public static string DataPrzegladu = DateTime.Now.AddDays(Generator.random.Next(1, 100)).ToString("yyyyMMdd");
 
         public static int RandomizePrzebiegValue()
@@ -22,6 +19,7 @@ namespace DatabaseGenerator.Model
             int iloscPaliwa = Generator.random.Next(8, 1500);
             return iloscPaliwa;
         }
+
         public static string RandomizeCzyUszkodzonyValue()
         {
             StringBuilder iloscPaliwaBuilder = new StringBuilder();

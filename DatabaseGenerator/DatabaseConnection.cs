@@ -91,6 +91,7 @@ namespace DatabaseGenerator
             {
                 using (OracleCommand cmd = connection.CreateCommand())
                 {
+                    Console.WriteLine("Trwa rozłączanie z bazą danych...");
                     try
                     {
                         connection.Dispose();

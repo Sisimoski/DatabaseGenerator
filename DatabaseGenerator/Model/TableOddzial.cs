@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
+using Oracle.ManagedDataAccess.Client;
+
 namespace DatabaseGenerator.Model
 {
     public class TableOddzial

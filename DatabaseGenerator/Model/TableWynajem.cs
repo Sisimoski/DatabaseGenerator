@@ -1,4 +1,6 @@
 ﻿using System;
+using Oracle.ManagedDataAccess.Client;
+
 namespace DatabaseGenerator.Model
 {
     public class TableWynajem

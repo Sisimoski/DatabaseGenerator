@@ -1,4 +1,6 @@
 ﻿using System;
+using Oracle.ManagedDataAccess.Client;
+
 namespace DatabaseGenerator.Model
 {
     public class TableSpecyfikacjaSamochodu
@@ -13,11 +15,12 @@ namespace DatabaseGenerator.Model
 
         public static string[] specyfikacjaSamochoduKolorValues = { "Czarny", "Biały", "Czerwony", "Pomarańczowy", "Żółty", "Zielony", "Fioletowy", "Niebieski", "Brązowy", "Granatowy", "Szary" };
 
-        public static string RandomizeSpecyfikacjaSamochoduDateValues()
+        public static int RandomizeSpecyfikacjaSamochoduDateValues()
         {
             DateTime start = new DateTime(1997, 1, 1);
             int range = (DateTime.Today - start).Days;
-            return start.AddDays(Generator.random.Next(range)).ToString("yyyyMMdd");
+            string yearManufacture = start.AddDays(Generator.random.Next(range)).ToString("yyyy");
+            return Convert.ToInt32(yearManufacture);
         }
     }
 }
