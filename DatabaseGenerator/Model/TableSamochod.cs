@@ -10,6 +10,12 @@ namespace DatabaseGenerator.Model
         public static List<string> ListOfVINs = new List<string>();
         public static string[] VINs = { };
 
+        public static void AddVINsToArray()
+        {
+            GeneratorSamochod.PutVINsToList();
+            VINs = ListOfVINs.ToArray();
+        }
+
         public static string RandomizeVIN()
         {
             StringBuilder vinBuilder = new StringBuilder();
