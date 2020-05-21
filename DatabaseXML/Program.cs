@@ -24,12 +24,12 @@ namespace DatabaseXML
                 await myConnection.ConnectToDatabaseAsync();
 
                 var tables = new Table();
-                await tables.FetchTablesAsync();
+                tables.FetchTables();
 
                 var exportXML = new ExportDataFromDatabaseToXML();
                 foreach (string table in tables.TableNamesList)
                 {
-                    await exportXML.ExportQueryResult(table, "S95287", table);
+                    exportXML.ExportQueryResult(table, "S95287", table);
                 }
 
                 await myConnection.DisconnectFromDatabase();
