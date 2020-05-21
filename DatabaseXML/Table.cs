@@ -9,7 +9,7 @@ namespace DatabaseXML
     {
         public List<string> TableNamesList = new List<string>() { };
 
-        public void FetchTables()
+        public async Task FetchTablesAsync()
         {
             try
             {
@@ -18,7 +18,7 @@ namespace DatabaseXML
                 command.CommandText = @"SELECT table_name FROM user_tables";
                 command.BindByName = true;
 
-                OracleDataReader reader = command.ExecuteReader();
+                OracleDataReader reader = await Task.Run(() => command.ExecuteReader());
 
                 while (reader.Read())
                 {

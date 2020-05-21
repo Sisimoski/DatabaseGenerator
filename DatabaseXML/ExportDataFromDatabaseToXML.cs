@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Xml;
 using Oracle.ManagedDataAccess.Client;
 
@@ -11,7 +12,7 @@ namespace DatabaseXML
         {
         }
 
-        public void ExportQueryResult(string table, string rootTag, string rowTag)
+        public async Task ExportQueryResult(string table, string rootTag, string rowTag)
         {
             try
             {
@@ -23,7 +24,7 @@ namespace DatabaseXML
                 command.XmlQueryProperties.RootTag = rootTag.ToUpper();
                 command.XmlQueryProperties.RowTag = rowTag.ToUpper();
 
-                XmlReader xmlReader = command.ExecuteXmlReader();
+                XmlReader xmlReader = await Task.Run(() => command.ExecuteXmlReader());
                 XmlDocument xmlDocument = new XmlDocument();
 
                 xmlDocument.PreserveWhitespace = true;

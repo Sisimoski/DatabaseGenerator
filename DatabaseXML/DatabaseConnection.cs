@@ -22,6 +22,7 @@ namespace DatabaseXML
             {
                 await connection.OpenAsync();
                 Console.WriteLine($"Połączono z bazą danych: {connection.DatabaseName}");
+                Console.WriteLine($"Źródło bazy danych: {connection.DataSource}");
             }
             catch(OracleException ex)
             {
