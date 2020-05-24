@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using Oracle.ManagedDataAccess.Client;
 
 namespace DatabaseGenerator
@@ -34,7 +35,7 @@ namespace DatabaseGenerator
 
         private void ConnectToDatabaseWithDefaultInput()
         {
-            connectionString = Environment.GetEnvironmentVariable("SQLConnectionString");
+            connectionString = ConfigurationManager.ConnectionStrings["SisimoskiSQLConnection"].ConnectionString;
 
             Console.WriteLine("Łączenie z bazą danych...");
 

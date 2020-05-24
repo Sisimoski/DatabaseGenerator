@@ -8,6 +8,7 @@ namespace DatabaseXML
     {
         readonly string connectionString;
         public static OracleConnection connection;
+        public static string OracleUserID;
 
         public DatabaseConnection()
         {
@@ -21,8 +22,9 @@ namespace DatabaseXML
             try
             {
                 await connection.OpenAsync();
-                Console.WriteLine($"Połączono z bazą danych: {connection.DatabaseName}");
-                Console.WriteLine($"Źródło bazy danych: {connection.DataSource}");
+                Console.WriteLine($"Połączono z bazą danych pomyślnie: {connection.DataSource}");
+                Console.WriteLine($"Cześć, {await GetUserIDAsync()}!");
+                
             }
             catch(OracleException ex)
             {
@@ -30,7 +32,7 @@ namespace DatabaseXML
             }
         }
 
-        public async Task DisconnectFromDatabase()
+        public async Task DisconnectFromDatabaseAsync()
         {
             try
             {
@@ -42,6 +44,18 @@ namespace DatabaseXML
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        public async Task<string> GetUserIDAsync()
+        {
+            OracleCommand command = new OracleCommand("", DatabaseConnection.connection);
+            command.CommandText = $"select user from dual";
+            command.CommandType = System.Data.CommandType.Text;
+            OracleDataReader reader = command.ExecuteReader();
+            await reader.ReadAsync();
+            OracleUserID = reader.GetString(0);
+
+            return OracleUserID;
         }
     }
 }
