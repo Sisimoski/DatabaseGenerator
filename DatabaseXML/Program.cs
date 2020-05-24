@@ -32,7 +32,7 @@ namespace DatabaseXML
                 string tableInput = Console.ReadLine();
 
                 ImportDataFromXMLToDatabase importXML = new ImportDataFromXMLToDatabase();
-                importXML.ImportQueryResult(import, tableInput);
+                importXML.ImportQueryResult(import, tableInput.ToUpper());
 
                 await myConnection.DisconnectFromDatabaseAsync();
             }
