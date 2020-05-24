@@ -10,4 +10,39 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
     <PackageReference Include="System.CommandLine.DragonFruit" Version="0.3.0-alpha.20253.1" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Desktop\XMLFileToImport.xml">
+      <Link>XMLFileToImport.xml</Link>
+    </None>
+    <None Include="bin\Debug\netcoreapp3.1\Export\WYNAJEM.xml">
+      <Link>Export\WYNAJEM.xml</Link>
+    </None>
+    <None Include="bin\Debug\netcoreapp3.1\Export\PRZEGLAD.xml">
+      <Link>Export\PRZEGLAD.xml</Link>
+    </None>
+    <None Include="bin\Debug\netcoreapp3.1\Export\SPECYFIKACJA_SAMOCHODU.xml">
+      <Link>Export\SPECYFIKACJA_SAMOCHODU.xml</Link>
+    </None>
+    <None Include="bin\Debug\netcoreapp3.1\Export\ZNIZKA.xml">
+      <Link>Export\ZNIZKA.xml</Link>
+    </None>
+    <None Include="bin\Debug\netcoreapp3.1\Export\KLIENT.xml">
+      <Link>Export\KLIENT.xml</Link>
+    </None>
+    <None Include="bin\Debug\netcoreapp3.1\Export\OPINIA.xml">
+      <Link>Export\OPINIA.xml</Link>
+    </None>
+    <None Include="bin\Debug\netcoreapp3.1\Export\ODDZIAL.xml">
+      <Link>Export\ODDZIAL.xml</Link>
+    </None>
+    <None Include="bin\Debug\netcoreapp3.1\Export\SAMOCHOD.xml">
+      <Link>Export\SAMOCHOD.xml</Link>
+    </None>
+    <None Include="bin\Debug\netcoreapp3.1\Export\PRACOWNICY.xml">
+      <Link>Export\PRACOWNICY.xml</Link>
+    </None>
+    <None Include="bin\Debug\netcoreapp3.1\Export\PLATNOSC.xml">
+      <Link>Export\PLATNOSC.xml</Link>
+    </None>
+  </ItemGroup>
 </Project>

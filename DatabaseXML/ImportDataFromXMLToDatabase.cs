@@ -21,14 +21,13 @@ namespace DatabaseXML
             this.filePath = filePath;
             this.table = table;
 
-            OracleCommand command = new OracleCommand("", DatabaseConnection.connection);
-            command.XmlCommandType = OracleXmlCommandType.Insert;
-
             LoadXMLFile();
             PrintXMLFileFormatted();
 
             try
             {
+                OracleCommand command = new OracleCommand("", DatabaseConnection.connection);
+                command.XmlCommandType = OracleXmlCommandType.Insert;
                 command.CommandText = xmlDocument.OuterXml;
 
                 AddNodesToList();
@@ -51,7 +50,7 @@ namespace DatabaseXML
                 Console.WriteLine("Błąd. Prawdopodobnie błędny format pliku XML.\n" + ex.Message);
             }
 
-            Console.WriteLine("Liczba wierszy wstawionych pomyślnie: {0}", rowsInserted);
+            Console.WriteLine("Wierszy wstawionych pomyślnie: {0}", rowsInserted);
         }
 
         public void LoadXMLFile()
